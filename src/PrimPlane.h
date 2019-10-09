@@ -36,6 +36,7 @@ public:
 	virtual Vec3f GetNormal(const Ray& ray) const override
 	{
 		// --- PUT YOUR CODE HERE ---
+		return normalize(m_normal);
 	}
 	
 private:
