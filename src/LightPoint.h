@@ -22,7 +22,8 @@ public:
 	virtual std::optional<Vec3f> Illuminate(Ray& ray) override
 	{
 		// --- PUT YOUR CODE HERE ---
-		return Vec3f();
+		Vec3f intensity = m_intensity/pow(abs((ray.org + rat.t * ray.dir) - m_position),2);
+		return intensity;
 	}
 
 

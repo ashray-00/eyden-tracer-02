@@ -32,6 +32,10 @@ public:
 		return RGB(0, 0, 0);
 	}
 
+	// Vec3f Illumininate(Ray& ray){
+	// }
+
+
 	
 private:
 	CScene& m_scene;
