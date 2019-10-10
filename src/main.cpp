@@ -28,8 +28,8 @@ Mat RenderFrame(void)
 	
 
 	// EyeLight surface shaders
-	// auto shd1 = std::make_shared<CShaderEyelight>(RGB(1, 0, 0)); // red surface
 	// auto shd2 = std::make_shared<CShaderEyelight>(RGB(0, 1, 0)); // green surface
+	// auto shd1 = std::make_shared<CShaderEyelight>(RGB(1, 0, 0)); // red surface
 	// auto shd3 = std::make_shared<CShaderEyelight>(RGB(0, 0, 1)); // blue surface
 	// auto shd4 = std::make_shared<CShaderEyelight>(RGB(1, 1, 0)); // yellow surface
 	// auto shd5 = std::make_shared<CShaderEyelight>(RGB(0, 1, 1)); // cyan surface
@@ -56,8 +56,8 @@ Mat RenderFrame(void)
 	Vec3f lightPosition2(-3, 5, +4);
 
 	// Add light sources to scene
-	// scene.Add(std::make_shared<CLightPoint>(pointLightIntensity, lightPosition1));
-	// scene.Add(std::make_shared<CLightPoint>(pointLightIntensity, lightPosition2));
+	//scene.Add(std::make_shared<CLightPoint>(pointLightIntensity, lightPosition1));
+	//scene.Add(std::make_shared<CLightPoint>(pointLightIntensity, lightPosition2));
 	scene.Add(std::make_shared<CLightArea>(areaLightIntensity, Vec3f(-1.5f, 10, -1.5f), Vec3f(1.5f, 10, 1.5f), Vec3f(1.5f, 10, -1.5f), Vec3f(-1.5f, 10, 1.5f)));
 	scene.Add(std::make_shared<CLightArea>(areaLightIntensity, Vec3f(-1.5f, 10, -1.5f), Vec3f(1.5f, 10, 1.5f), Vec3f(1.5f, 10, -1.5f), Vec3f(-1.5f, 10, 1.5f)));
 	scene.Add(std::make_shared<CLightArea>(areaLightIntensity, Vec3f(-1.5f, 10, -1.5f), Vec3f(1.5f, 10, 1.5f), Vec3f(1.5f, 10, -1.5f), Vec3f(-1.5f, 10, 1.5f)));
@@ -80,6 +80,6 @@ int main(int argc, char* argv[])
 	Mat img = RenderFrame();
 	imshow("Image", img);
 	waitKey();
-	imwrite("flat.jpg", img);
+	imwrite("area_light.jpg", img);
 	return 0;
 }
