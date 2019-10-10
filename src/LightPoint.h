@@ -23,10 +23,10 @@ public:
 	{
 		// --- PUT YOUR CODE HERE ---
 		Vec3f intensity; 
-		intensity[0]= m_intensity[0]/pow(((ray.org[0] + ray.t * ray.dir[0]) - m_position[0]),2);
-		intensity[1]= m_intensity[1]/pow(((ray.org[1] + ray.t * ray.dir[1]) - m_position[1]),2);
-		intensity[2]= m_intensity[2]/pow(((ray.org[2] + ray.t * ray.dir[2]) - m_position[2]),2);
-		return intensity;
+		Vec3f direction = m_position - ray.org;
+		intensity = m_intensity/pow(cv::norm(direction),2);
+		ray.dir = normalize(direction);
+		return normalize(intensity);
 	}
 
 

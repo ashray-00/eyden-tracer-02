@@ -49,12 +49,13 @@ public:
 	bool Intersect(Ray& ray) const
 	{
 		// --- PUT YOUR CODE HERE ---
+		bool hit = false;
 		for(auto idx = m_vpPrims.begin(); idx != m_vpPrims.end(); ++idx){
 			if((*idx)->Intersect(ray)){
-				return true;
+				hit = true;
 			}
 		}
-		return false;
+		return hit;
 	}
 
 	/**
@@ -63,7 +64,7 @@ public:
 	bool Occluded(Ray& ray)
 	{
 		// --- PUT YOUR CODE HERE ---
-		return false;
+		return Intersect(ray);
 	}
 
 	/**
